@@ -1,0 +1,34 @@
+<h1>Liste des salaries</h1>
+<div class="counter" *ngIf="salaries">
+  <p>{{salaries.length}} salaries</p>
+</div>
+<div class="mt-5 mb-5">
+  <a routerLink='/create' class="btn btn-info">Ajouter un salarie</a>
+</div>
+
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Entreprise</th>
+      <th>Adresse</th>
+      <th>Contact</th>
+      <th>Secteur</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let salarie of salaries">
+      <td>{{salarie._id}}</td>
+      <td>{{salarie.entreprise}}</td>
+      <td>{{salarie.location}}</td>
+      <td>{{salarie.contact}}</td>
+      <td>{{salarie.activite}}</td>
+      <td>
+        <a routerLink="/salarie/{{salarie._id}}" class="btn btn-success">Détails</a>
+        <a routerLink="/update/{{salarie._id}}" class="btn btn-warning">Modifier</a>
+        <a routerLink="/delete/{{salarie._id}}" class="btn btn-danger">Supprimer</a>
+        <!--<button type="button" name="button" class="btn btn-danger" (click)="deletesalarie(salarie._id)">Supprimer</button>-->
+      </td>
+    </tr>
+</table>
