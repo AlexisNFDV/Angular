@@ -1,0 +1,31 @@
+<form>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Entreprise</label>
+        <input type="text" class="form-control" [value]="formCreate.entreprise" (change)="formCreate.entreprise = $event.target.value">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label>Adresse</label>
+        <input type="text" class="form-control" [value]="formCreate.location" (change)="formCreate.location = $event.target.value">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Contact référent</label>
+        <input type="text" class="form-control" [value]="formCreate.contact" (change)="formCreate.contact = $event.target.value">
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label>Secteur d'activités</label>
+        <input type="text" class="form-control" [value]="formCreate.activite" (change)="formCreate.activite = $event.target.value">
+      </div>
+    </div>
+  </div>
+  <button type="button" name="button" class="btn btn-success" (click)=createClient()>Ajouter</button>
+</form>
