@@ -24,6 +24,7 @@ import { ProjectUpdateComponent } from './crud/project/project-update/project-up
 // services
 import {CustomerService} from './services/customer.service';
 import {EmployeeService} from './services/employee.service';
+import { ProjectService } from './services/project.service';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {EmployeeService} from './services/employee.service';
   ],
   providers: [
     CustomerService,
-    EmployeeService
+    EmployeeService,
+    ProjectService
   ],
   bootstrap: [AppComponent]
 })
