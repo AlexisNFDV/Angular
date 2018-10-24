@@ -21,6 +21,7 @@ import { ProjectCreateComponent } from './crud/project/project-create/project-cr
 import { ProjectViewComponent } from './crud/project/project-view/project-view.component';
 import { ProjectUpdateComponent } from './crud/project/project-update/project-update.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 // services
 import {CustomerService} from './services/customer.service';
@@ -43,7 +44,8 @@ import { ProjectService } from './services/project.service';
     ProjectCreateComponent,
     ProjectViewComponent,
     ProjectUpdateComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

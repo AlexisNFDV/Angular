@@ -12,9 +12,14 @@ import { ProjectListComponent } from './crud/project/project-list/project-list.c
 import { ProjectViewComponent } from './crud/project/project-view/project-view.component';
 import { ProjectUpdateComponent } from './crud/project/project-update/project-update.component';
 import { ProjectCreateComponent } from './crud/project/project-create/project-create.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 
+    {
+        path: '',
+        component: HomeComponent,
+    },
     {
         path: 'customer',
         component: ListComponent,
