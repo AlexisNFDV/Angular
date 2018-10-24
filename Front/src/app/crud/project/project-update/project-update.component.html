@@ -1,3 +1,68 @@
-<p>
-  project-update works!
-</p>
+<form>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Nom</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.name" (change)="formUpdate.name = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.description" (change)="formUpdate.description = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Date de départ</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.start_date" (change)="formUpdate.start_date = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Date de fin</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.end_date" (change)="formUpdate.end_date = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Client</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.customer" (change)="formUpdate.customer = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Employee</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.employee" (change)="formUpdate.employee = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Montant</label>
+              <input type="number" class="form-control" placeholder="Nom projet" [value]="formUpdate.amount" (change)="formUpdate.amount = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Statut</label>
+              <input type="text" class="form-control" placeholder="Nom projet" [value]="formUpdate.status" (change)="formUpdate.status = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <button type="button" name="button" class="btn btn-info" (click)=updateProject()>Ajouter</button>
+
+</form>

@@ -63,14 +63,14 @@ module.exports = {
             if (error) {
                 throw error;
             }
-            project.firstname = req.body.firstname;
-            project.lastname = req.body.lastname;
-            project.username = req.body.username;
-            project.birthDate = req.body.birthDate;
-            project.address = req.body.address;
-            project.phoneNumber = req.body.phoneNumber;
-            project.mail = req.body.mail;
-            project.job = req.body.job;
+            project.name = req.body.name;
+            project.description = req.body.description;
+            project.endDate = req.body.end_date;
+            project.startDate = req.body.start_date;
+            project.customer = req.body.customer;
+            project.employee = req.body.employee;
+            project.amount = req.body.amount;
+            project.status = req.body.status;
             project.save((error, project) => {
                 if (error) {
                     throw error;
