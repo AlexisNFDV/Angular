@@ -23,6 +23,7 @@ import { ProjectUpdateComponent } from './crud/project/project-update/project-up
 
 // services
 import {CustomerService} from './services/customer.service';
+import {EmployeeService} from './services/employee.service';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {CustomerService} from './services/customer.service';
     HttpClientModule
   ],
   providers: [
-    CustomerService
+    CustomerService,
+    EmployeeService
   ],
   bootstrap: [AppComponent]
 })
