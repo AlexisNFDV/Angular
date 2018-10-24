@@ -1,39 +1,38 @@
-<h1>Liste des utilisateurs</h1>
+<h1>Liste des Employés</h1>
 
 <div class="mt-5 mb-5">
-  <a routerLink='/employee/create' class="btn btn-info">Ajouter un salarié</a>
+  <a routerLink='/employee/create' class="btn btn-info"><i class="fas fa-plus"></i></a>
 </div>
 
 <table class="table">
-
-  <tr>
-    <td>id</td>
-    <td>Nom</td>
-    <td>Prénom</td>
-    <td>Username</td>
-    <td>Date de naissance</td>
-    <td>Adresse</td>
-    <td>Numéro téléphone</td>
-    <td>Mail</td>
-    <td>Poste</td>
-    <td></td>
-  </tr>
+  <thead class="thead-dark">
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Username</th>
+      <th>Date de naissance</th>
+      <th>Adresse</th>
+      <th>Numéro téléphone</th>
+      <th>Mail</th>
+      <th>Poste</th>
+      <th></th>
+    </tr>
+  </thead>
 
   <tbody>
     <tr *ngFor="let employee of employees">
-      <td>{{employee._id}}</td>
       <td>{{employee.firstname}}</td>
       <td>{{employee.lastname}}</td>
       <td>{{employee.username}}</td>
-      <td>{{employee.birthDate}}</td>
+      <td>{{employee.day_of_birth}}</td>
       <td>{{employee.address}}</td>
-      <td>{{employee.phoneNumber}}</td>
+      <td>{{employee.phone_number}}</td>
       <td>{{employee.mail}}</td>
       <td>{{employee.job}}</td>
       <td>
-        <a routerLink="/employee/view/{{employee._id}}" class="btn btn-primary">voir profil</a>
-        <a routerLink="/employee/update/{{employee._id}}" class="btn btn-secondary">modifier profil</a>
-        <button type="button" name="button" class="btn btn-danger" (click)="deleteemployee(employee._id)">Supprimer</button>
+        <a class="mr-2" routerLink="/employee/view/{{employee._id}}"><i class="far fa-eye"></i></a>        
+        <a class="mr-2" routerLink="/employee/update/{{employee._id}}"><i class="far fa-edit"></i></a>
+        <a  href="#" (click)="deleteemployee(employee._id)"><i class="fas fa-trash"></i></a>
       </td>
     </tr>
   </tbody>

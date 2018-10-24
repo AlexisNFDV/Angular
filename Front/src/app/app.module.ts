@@ -20,6 +20,7 @@ import { ProjectListComponent } from './crud/project/project-list/project-list.c
 import { ProjectCreateComponent } from './crud/project/project-create/project-create.component';
 import { ProjectViewComponent } from './crud/project/project-view/project-view.component';
 import { ProjectUpdateComponent } from './crud/project/project-update/project-update.component';
+import { HeaderComponent } from './header/header.component';
 
 // services
 import {CustomerService} from './services/customer.service';
@@ -41,7 +42,8 @@ import { ProjectService } from './services/project.service';
     ProjectListComponent,
     ProjectCreateComponent,
     ProjectViewComponent,
-    ProjectUpdateComponent
+    ProjectUpdateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

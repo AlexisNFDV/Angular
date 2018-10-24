@@ -1,36 +1,38 @@
 <h1>Liste des Projets</h1>
 
 <div class="mt-5 mb-5">
-    <a routerLink='/project/create' class="btn btn-info">Ajouter un projet</a>
+    <a routerLink='/project/create' class="btn btn-info"><i class="fas fa-plus"></i></a>
 </div>
 
 <table class="table">
 
-    <tr>
-        <td>Nom</td>
-        <td>Description</td>
-        <td>Date de départ</td>
-        <td>Date de fin</td>
-        <td>Clients</td>
-        <td>Montant</td>
-        <td>Statut</td>
-        <td></td>
-    </tr>
+    <thead class="thead-dark">
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Date de départ</th>
+            <th>Date de fin</th>
+            <th>Clients</th>
+            <th>Montant</th>
+            <th>Statut</th>
+            <th></th>
+        </tr>
+    </thead>
 
     <tbody>
         <tr *ngFor="let project of projects">
-          <td>{{project.name}}</td>
-          <td>{{project.description}}</td>
-          <td>{{project.start_date}}</td>
-          <td>{{project.end_date}}</td>
-          <td>{{project.customer}}</td>
-          <td>{{project.amount}}</td>
-          <td>{{project.status}}</td>
-          <td>
-            <a routerLink="/project/view/{{project._id}}" class="btn btn-primary">voir profil</a>
-            <a routerLink="/project/update/{{project._id}}" class="btn btn-secondary">modifier profil</a>
-            <button type="button" name="button" class="btn btn-danger" (click)="deleteProject(project._id)">Supprimer</button>
-          </td>
+            <td>{{project.name}}</td>
+            <td>{{project.description}}</td>
+            <td>{{project.start_date}}</td>
+            <td>{{project.end_date}}</td>
+            <td>{{project.customer}}</td>
+            <td>{{project.amount}}</td>
+            <td>{{project.status}}</td>
+            <td>
+                <a class="mr-2" routerLink="/project/view/{{project._id}}"><i class="far fa-eye"></i></a>        
+                <a class="mr-2" routerLink="/project/update/{{project._id}}"><i class="far fa-edit"></i></a>
+                <a href="#" (click)="projectCustomer(project._id)"><i class="fas fa-trash"></i></a>
+            </td>
         </tr>
     </tbody>
 

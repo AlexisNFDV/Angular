@@ -1,32 +1,34 @@
-<h1>Liste des utilisateurs</h1>
+<h1>Liste des clients</h1>
 
 <div class="mt-5 mb-5">
-    <a routerLink='/customer/create' class="btn btn-info">Ajouter un client</a>
+    <a routerLink='/customer/create' class="btn btn-info"><i class="fas fa-plus"></i></a>
 </div>
 
 <table class="table">
 
-    <tr>
-        <td>id</td>
-        <td>Entreprise</td>
-        <td>Adresse</td>
-        <td>Contact</td>
-        <td>Secteur d'activité</td>
-        <td></td>
-    </tr>
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th>
+            <th>Entreprise</th>
+            <th>Adresse</th>
+            <th>Contact</th>
+            <th>Secteur d'activité</th>
+            <th></th>
+        </tr>
+    </thead>
 
     <tbody>
         <tr *ngFor="let customer of customers">
-          <td>{{customer._id}}</td>
-          <td>{{customer.company}}</td>
-          <td>{{customer.address}}</td>
-          <td>{{customer.contact}}</td>
-          <td>{{customer.businessLine}}</td>
-          <td>
-            <a routerLink="/customer/view/{{customer._id}}" class="btn btn-primary">voir profil</a>
-            <a routerLink="/customer/update/{{customer._id}}" class="btn btn-secondary">modifier profil</a>
-            <button type="button" name="button" class="btn btn-danger" (click)="deleteCustomer(customer._id)">Supprimer</button>
-          </td>
+            <td>{{customer._id}}</td>
+            <td>{{customer.company}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.contact}}</td>
+            <td>{{customer.businessLine}}</td>
+            <td>
+                <a class="mr-2" routerLink="/customer/view/{{customer._id}}"><i class="far fa-eye"></i></a>        
+                <a class="mr-2" routerLink="/customer/update/{{customer._id}}"><i class="far fa-edit"></i></a>
+                <a  href="#" (click)="deleteCustomer(customer._id)"><i class="fas fa-trash"></i></a>
+            </td>
         </tr>
     </tbody>
 
