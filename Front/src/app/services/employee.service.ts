@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { last } from '@angular/router/src/utils/collection';
 
 @Injectable()
 
@@ -28,12 +29,16 @@ export class EmployeeService {
     return this.http.get(`${this.apiUrl}/view/${id}`);
   }
 
-  createCustomer(compagny, address, contact, businessLine) {
+  createEmployee(firstname, lastname, username, birthDate, address, phoneNumber, mail, job) {
     const payload = {
-      'company': compagny,
+      'firstname': firstname,
+      'lastname': lastname,
+      'username': username,
+      'birthDate': birthDate,
       'address': address,
-      'contact': contact,
-      'businessLine': businessLine
+      'phoneNumber': phoneNumber,
+      'mail': mail,
+      'job': job
     };
 
     this.datatopost = JSON.stringify(payload);
@@ -41,7 +46,7 @@ export class EmployeeService {
     return this.http.post(`${this.apiUrl}/create`, this.datatopost, this.httpOptions).subscribe(
         res => {
             console.log(res);
-            this.router.navigate(['/customer']);
+            this.router.navigate(['/employee']);
         },
         err => {
             console.log(err.message);
@@ -49,20 +54,24 @@ export class EmployeeService {
     );
   }
 
-  updateCustomer(customerId, compagny, address, contact, businessLine) {
+  updateEmployee(employeeId, firstname, lastname, username, birthDate, address, phoneNumber, mail, job){
     const payload = {
-      'company': compagny,
+      'firstname': firstname,
+      'lastname': lastname,
+      'username': username,
+      'birthDate': birthDate,
       'address': address,
-      'contact': contact,
-      'businessLine': businessLine
+      'phoneNumber': phoneNumber,
+      'mail': mail,
+      'job': job
     };
 
     this.datatopost = JSON.stringify(payload);
 
-    return this.http.put(`${this.apiUrl}/update/${customerId}`, this.datatopost, this.httpOptions).subscribe(
+    return this.http.put(`${this.apiUrl}/update/${employeeId}`, this.datatopost, this.httpOptions).subscribe(
         res => {
             console.log(res);
-            this.router.navigate(['/customer']);
+            this.router.navigate(['/employee']);
         },
         err => {
             console.log(err.message);

@@ -1,3 +1,41 @@
-<p>
-  employee-list works!
-</p>
+<h1>Liste des utilisateurs</h1>
+
+<div class="mt-5 mb-5">
+  <a routerLink='/employee/create' class="btn btn-info">Ajouter un salarié</a>
+</div>
+
+<table class="table">
+
+  <tr>
+    <td>id</td>
+    <td>Nom</td>
+    <td>Prénom</td>
+    <td>Username</td>
+    <td>Date de naissance</td>
+    <td>Adresse</td>
+    <td>Numéro téléphone</td>
+    <td>Mail</td>
+    <td>Poste</td>
+    <td></td>
+  </tr>
+
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee._id}}</td>
+      <td>{{employee.firstname}}</td>
+      <td>{{employee.lastname}}</td>
+      <td>{{employee.username}}</td>
+      <td>{{employee.birthDate}}</td>
+      <td>{{employee.address}}</td>
+      <td>{{employee.phoneNumber}}</td>
+      <td>{{employee.mail}}</td>
+      <td>{{employee.job}}</td>
+      <td>
+        <a routerLink="/employee/view/{{employee._id}}" class="btn btn-primary">voir profil</a>
+        <a routerLink="/employee/update/{{employee._id}}" class="btn btn-secondary">modifier profil</a>
+        <button type="button" name="button" class="btn btn-danger" (click)="deleteemployee(employee._id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
