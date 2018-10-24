@@ -32,7 +32,7 @@
       <td>
         <a class="mr-2" routerLink="/employee/view/{{employee._id}}"><i class="far fa-eye"></i></a>        
         <a class="mr-2" routerLink="/employee/update/{{employee._id}}"><i class="far fa-edit"></i></a>
-        <a  href="#" (click)="deleteemployee(employee._id)"><i class="fas fa-trash"></i></a>
+        <a (click)="deleteemployee(employee._id)"><i class="fas fa-trash"></i></a>
       </td>
     </tr>
   </tbody>

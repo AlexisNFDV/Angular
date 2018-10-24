@@ -27,7 +27,7 @@
             <td>
                 <a class="mr-2" routerLink="/customer/view/{{customer._id}}"><i class="far fa-eye"></i></a>        
                 <a class="mr-2" routerLink="/customer/update/{{customer._id}}"><i class="far fa-edit"></i></a>
-                <a  href="#" (click)="deleteCustomer(customer._id)"><i class="fas fa-trash"></i></a>
+                <a (click)="deleteCustomer(customer._id)"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
     </tbody>
