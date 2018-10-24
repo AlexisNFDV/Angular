@@ -1,44 +1,54 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Module
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
+// Component
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ProjetsComponent } from './pages/projets/projets.component';
-import { ClientsComponent } from './pages/clients/clients.component';
-import { SalariesComponent } from './pages/salaries/salaries.component';
-import { HeaderComponent } from './partials/header/header.component';
-import { FooterComponent } from './partials/footer/footer.component';
-import { CreateComponent } from './pages/create/create.component';
-import { UpdateComponent } from './pages/update/update.component';
+import { ListComponent } from './crud/customer/list/list.component';
+import { CreateComponent } from './crud/customer/create/create.component';
+import { UpdateComponent } from './crud/customer/update/update.component';
+import { ViewComponent } from './crud/customer/view/view.component';
+import { EmployeeListComponent } from './crud/employee/employee-list/employee-list.component';
+import { EmployeeCreateComponent } from './crud/employee/employee-create/employee-create.component';
+import { EmployeeUpdateComponent } from './crud/employee/employee-update/employee-update.component';
+import { EmployeeViewComponent } from './crud/employee/employee-view/employee-view.component';
+import { ProjectListComponent } from './crud/project/project-list/project-list.component';
+import { ProjectCreateComponent } from './crud/project/project-create/project-create.component';
+import { ProjectViewComponent } from './crud/project/project-view/project-view.component';
+import { ProjectUpdateComponent } from './crud/project/project-update/project-update.component';
 
-import { ClientsService } from './services/clients.service';
-
+// services
+import {CustomerService} from './services/customer.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjetsComponent,
-    ClientsComponent,
-    SalariesComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
+    ListComponent,
     CreateComponent,
-    UpdateComponent
-    ],
-    imports: [
-      BrowserModule,
-      AppRoutingModule,
-      HttpClientModule
-    ],
-    providers: [
-      ClientsService
-    ],
-    bootstrap: [AppComponent]
+    UpdateComponent,
+    ViewComponent,
+    EmployeeListComponent,
+    EmployeeCreateComponent,
+    EmployeeUpdateComponent,
+    EmployeeViewComponent,
+    ProjectListComponent,
+    ProjectCreateComponent,
+    ProjectViewComponent,
+    ProjectUpdateComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    CustomerService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

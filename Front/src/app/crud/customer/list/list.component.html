@@ -1,0 +1,33 @@
+<h1>Liste des utilisateurs</h1>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/customer/create' class="btn btn-info">Ajouter un client</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>id</td>
+        <td>Entreprise</td>
+        <td>Adresse</td>
+        <td>Contact</td>
+        <td>Secteur d'activité</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer._id}}</td>
+          <td>{{customer.company}}</td>
+          <td>{{customer.address}}</td>
+          <td>{{customer.contact}}</td>
+          <td>{{customer.businessLine}}</td>
+          <td>
+            <a routerLink="/customer/view/{{customer._id}}" class="btn btn-primary">voir profil</a>
+            <a routerLink="/customer/update/{{customer._id}}" class="btn btn-secondary">modifier profil</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteCustomer(customer._id)">Supprimer</button>
+          </td>
+        </tr>
+    </tbody>
+
+</table>

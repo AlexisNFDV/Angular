@@ -1,0 +1,33 @@
+<form>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Entreprise</label>
+              <input type="text" class="form-control" placeholder="Nom entreprise" [value]="formUpdate.company" (change)="formUpdate.company = $event.target.value">
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label>Adresse</label>
+              <input type="text" class="form-control" placeholder="Username" [value]="formUpdate.address" (change)="formUpdate.address = $event.target.value">
+          </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+              <label>Contact</label>
+              <input type="text" class="form-control" placeholder="Website" [value]="formUpdate.contact" (change)="formUpdate.contact = $event.target.value">
+          </div>
+      </div>
+      <div class="col">
+          <div class="form-group">
+              <label>Secteur d'activité</label>
+              <input type="text" class="form-control" placeholder="Website" [value]="formUpdate.businessLine" (change)="formUpdate.businessLine = $event.target.value">
+          </div>
+      </div>
+  </div>
+
+  <button type="button" name="button" class="btn btn-info" (click)=updateCustomer()>Ajouter</button>
+
+</form>
