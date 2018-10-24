@@ -42,7 +42,7 @@ module.exports = {
             if (error) {
                 console.log("Error on project");
             }
-            res.send("Project successfully created !");
+            res.send({message: "Project successfully created!"})
         });
     },
     delete: (req, res) => {
@@ -54,7 +54,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Project successfully deleted !");
+                res.send({message: "Project successfully deleted!"})
             });
         });
     },
@@ -75,7 +75,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Project successfully updated !");
+                res.send({message: "Project successfully updated!"})
             });
         });
     }

@@ -10,20 +10,32 @@ var rooter = require('./routes/routing');
 var app = express();
 
 //handle CORS 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
-  res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-  );
+// app.use((req, res, next) => {
+//   res.setHeader('Content-type','application/json');
+//   res.setHeader('Accept','application/json');
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+//   res.setHeader(
+//       "Access-Control-Allow-Headers",
+//       "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
+
+app.use(function(req, res, next) {
+  res.setHeader('Content-type','application/json');
+  res.setHeader('Accept','application/json');
+  res.setHeader('Accept','text');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin');
   next();
 });
 
 //database setup
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  'mongodb://user:password1@ds119651.mlab.com:19651/projet-angular', {
+  'mongodb://user1:admin1@ds141872.mlab.com:41872/angular-project', {
       useNewUrlParser: true
   }
 ).then(() => {

@@ -23,6 +23,7 @@ module.exports = {
         const address = req.body.address;
         const contact = req.body.contact;
         const businessLine = req.body.businessLine;
+        console.log(businessLine);
 
         const customer = new Customer({
             company,
@@ -30,11 +31,13 @@ module.exports = {
             contact,
             businessLine
         });
+
+        console.log(customer);
         customer.save((error) => {
             if (error) {
                 console.log("Error on customer");
             }
-            res.send("Customer successfully created !");
+            res.send({message: "Customer successfully created!"})
         });
     },
     delete: (req, res) => {
@@ -46,7 +49,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Customer successfully deleted !");
+                res.send({message: "Customer successfully deleted!"})
             });
         });
     },
@@ -63,7 +66,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Customer successfully updated !");
+                res.send({message: "Customer successfully updated!"})
             });
         });
     }

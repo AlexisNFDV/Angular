@@ -8,7 +8,7 @@ const EmployeeSchema = mongoose.Schema({
     address: String,
     phone_number: Number,
     mail: String,
-    job: String,
+    job: String
 })
 
 module.exports = mongoose.model('Employee', EmployeeSchema);

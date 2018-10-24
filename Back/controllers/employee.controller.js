@@ -42,7 +42,7 @@ module.exports = {
             if (error) {
                 console.log("Error on employee");
             }
-            res.send("Employee successfully created !");
+            res.send({message: "Employee successfully created!"})
         });
     },
     delete: (req, res) => {
@@ -54,7 +54,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Employee successfully deleted !");
+                res.send({message: "Employee successfully deleted!"})
             });
         });
     },
@@ -75,7 +75,7 @@ module.exports = {
                 if (error) {
                     throw error;
                 }
-                res.send("Employee successfully updated !");
+                res.send({message: "Employee successfully updated!"})
             });
         });
     }

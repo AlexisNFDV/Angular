@@ -9,7 +9,7 @@ const ProjectSchema = mongoose.Schema({
     customer: [{ type: Schema.Types.ObjectId, ref: 'Customer' }],
     employee: [{ type: Schema.Types.ObjectId, ref: 'Employee' }],
     amount: Number,
-    status: String,
+    status: String
 })
 
 module.exports = mongoose.model('Project', ProjectSchema);
